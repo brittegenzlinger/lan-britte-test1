@@ -1,0 +1,45 @@
+yes i see it
+
+Outputs
+  {
+  movementSample_timbre // range: 0 - 127 midi CC output 0
+  movementSample_volume
+  impactSample_timbre
+  impactSample_volume
+  }
+
+interim variables
+{
+speed // calculated from accelerometer vars
+
+}
+Inputs
+  {
+  accelerometer_x // Serial.read integer 1 ~ 5,000 3 inputs from accelerometer
+  accelerometer_y
+  accelerometer_z
+
+  impact_sensor // analog_read 1 - 1023
+
+  movementSample_timbre_knob_range //changes the range of movementSample_timbre
+  movementSample_timbre_knob_min // changes minimum of range movementSample_timbre
+
+  movementSample_volume_knob_range // 0-127
+  movementSample_volume_knob_min // 0-127
+
+  impactSample_timbre_knob_range // 0-127
+  impactSample_timbre_knob_min // 0-127
+
+  impactSample_volume_knob_range // 0-127
+  impactSample_volume_knob_min //  min + range = max volume
+  }
+
+methods
+{
+createMovementTimbre(speed, movementSample_timbre_knob_min, movementSample_timbre_knob_range)
+createMovementVolume(speed, movementSample_volume_knob_min, movementSample_volume_knob_range)
+createImpactTimbre(impact_sensor, impactSample_timbre_knob_min, impactSample_timbre_knob_range)
+createImpactVolume(impact_sensor, impactSample_volume_knob_min, impactSample_volume_knob_range)
+createSpeed(accelerometer_x, accelerometer_y, accelerometer_z)
+testFunc(tbd)
+}
